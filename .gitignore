@@ -1,0 +1,28 @@
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+.env
+.venv/
+venv/
+env/
+
+# IDEs / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# OS Temp Files
+.DS_Store
+Thumbs.db
+
+# Notă:
+# outputs/optuna_studies/*.db NU SUNT EXCLUSE pentru a permite vizualizarea studiilor Optuna.
+# data/curs_EUR_22-02-2020_19-03-2026.csv NU ESTE EXCLUS pentru a menține proiectul reproductibil.

@@ -1,0 +1,38 @@
+# Istoricul Prompturilor - Proiect Curs Valutar BNR (EUR/RON)
+
+## 1. Inițializare proiect și citire fișiere .md
+- "Citește proiectul existent din folderul curs_bnr_agentic și fișierele .md existente."
+- "Context: Profesorul a cerut ca monedele care nu mai sunt în vigoare să fie înlocuite cu EUR. Pentru EUR vom reveni la intervalul folosit în cerința inițială: 22/02/2020 – 19/03/2026."
+
+## 2. Web scraping curs EUR/RON
+- "Vreau să adaptăm proiectul de la moneda veche la moneda EUR, fără refactorizare și fără schimbarea structurii actuale a proiectului."
+- "Modifică doar ce este necesar pentru trecerea la EUR: parametrii de scraping din main.py, numele fișierului CSV generat, calea către CSV în main_ml.py, value_col în main_ml.py și variabila currency."
+
+## 3. Antrenare și evaluare modele
+- "Implementează modelele Prophet, XGBoost și SARIMA. Păstrează logica ML în main_ml.py, antrenează-le pe datele extrase și evaluează-le pe ultimele 14 zile."
+
+## 4. Tuning hiperparametri GridSearch + Optuna
+- "Pentru SARIMA: extinde funcția de GridSearch astfel încât să exploreze nu doar order, ci și seasonal_order, conform cerinței."
+- "Adaugă o funcție de tuning pentru Prophet: o variantă simplă de GridSearch pentru câțiva hiperparametri relevanți."
+- "Integrează funcțiile de tuning în pipeline-ul principal. Rulează GridSearch pentru SARIMA și Prophet, rulează Optuna pentru XGBoost."
+
+## 5. Refactorizare arhitecturală în src/curs_bnr
+- "Proiectul funcționează deja pentru moneda EUR/RON. Vreau să apropiem proiectul meu de o structură modulară, dar fără să stricăm funcționalitatea existentă."
+- "Propune un plan de refactorizare incrementală: src/curs_bnr, config.py centralizat, data/raw, outputs/models, outputs/reports."
+- "Creează structura nouă de foldere, dar NU șterge fișierele Python existente din root. Adaugă fișiere __init__.py unde este necesar. Creează config.py centralizat."
+- "Migrează complet fișierele Python: scraper.py -> src/curs_bnr/data/scraper.py, procesare.py -> processing.py etc."
+
+## 6. Creare run_optuna_optimization.py
+- "Creează fișierul run_optuna_optimization.py în rădăcina proiectului. Scriptul trebuie să ruleze optimizare Optuna separat de pipeline-ul principal pentru XGBoost, SARIMA, Prophet."
+- "Experimentele Optuna trebuie salvate în SQLite, câte un fișier pentru fiecare model. Folosește funcțiile existente din modulele migrate fără să duplici inutil cod."
+
+## 7. Creare pornire_dashboard_optuna.ipynb
+- "Creează fișierul pornire_dashboard_optuna.ipynb. Trebuie să explice pe scurt că dashboard-ul permite vizualizarea studiilor Optuna."
+- "Trebuie să conțină celule pentru pornirea dashboard-ului pentru fiecare studiu: XGBoost (8080), SARIMA (8081), Prophet (8082)."
+
+## 8. Formatare cod: type hints, docstrings în română, PEP8 120 caractere
+- "Respectă regulile din Gemini.md: folosește type hints explicite, docstrings în limba română și formatare PEP8 la 120 caractere maxim."
+
+## 9. Pași GitHub / repository
+- "Crează un fișier README.md cu toți pașii necesari pentru instalarea dependențelor, rularea proiectului și folosirea dashboard-urilor."
+- "Exclude din versionare datele brute (data/), binarele, rezultatele HTML și bazele de date SQLite prin .gitignore."

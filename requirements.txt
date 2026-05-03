@@ -1,0 +1,15 @@
+beautifulsoup4
+joblib
+numpy
+optuna
+optuna-dashboard
+pandas
+plotly
+prophet
+requests
+scikit-learn
+statsmodels
+xgboost
+fastapi
+uvicorn
+streamlit
