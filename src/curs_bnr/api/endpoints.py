@@ -91,8 +91,8 @@ def run_optuna() -> Dict[str, Any]:
     return {
         "message": "Optimizarea se rulează separat: `python run_optuna_optimization.py`.",
         "dashboards": {
-            "XGBoost": "http://127.0.0.1:8080",
-            "SARIMA": "http://127.0.0.1:8081",
-            "Prophet": "http://127.0.0.1:8082"
+            "XGBoost": "http://127.0.0.1:8090",
+            "SARIMA": "http://127.0.0.1:8091",
+            "Prophet": "http://127.0.0.1:8092"
         }
     }

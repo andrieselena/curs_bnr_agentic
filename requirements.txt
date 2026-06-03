@@ -13,3 +13,5 @@ xgboost
 fastapi
 uvicorn
 streamlit
+google-generativeai
+python-dotenv
